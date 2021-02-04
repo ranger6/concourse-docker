@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#	down -- shutdown concourse
+
+docker-compose --env-file private/credentials down

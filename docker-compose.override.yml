@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+
+  web:
+    environment:
+      CONCOURSE_ADD_LOCAL_USER: "${E_CONCOURSE_ADD_LOCAL_USER}"
+      CONCOURSE_MAIN_TEAM_LOCAL_USER: "clem"
+      CONCOURSE_VAULT_URL: "http://muir.local:8200"
+      CONCOURSE_VAULT_SHARED_PATH: "shared"
+      CONCOURSE_VAULT_CLIENT_TOKEN: "${E_CONCOURSE_VAULT_CLIENT_TOKEN}"
