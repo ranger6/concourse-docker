@@ -65,9 +65,11 @@ It is assumed that you have Docker set up and running.
 
 It is assumed from now on that you have Vault set up and running.
 
-6. Generate a [Vault token](https://concourse-ci.org/vault-credential-manager.html#vault-periodic-token). Edit the credentials file, adding the token string.
+6. Following the section [Configuring the Secrets Engine](https://concourse-ci.org/vault-credential-manager.html#configuring-the-secrets-engine):
+    1. Enable a "secrets engine" (e.g. `kv`).
+    2. Create an appropriate policy: use directly, or edit, `concourse-policy.hcl` This defines the Concourse access rights to Vault and implicitly where secrets are going to be stored. This might be good point to create some secrets in the location specified in the policy.
+    3. Generate a [Vault token](https://concourse-ci.org/vault-credential-manager.html#vault-periodic-token). Edit the credentials file, adding the token string.
 7. Set the Vault URL in `docker-compose.override.yml`  This is the same URL that is used to browse using the Vault web UI. It is assumed that Vault and Concourse are not using tls/ssl. So, the URL is "http" and not "https".
-8. Use directly, or edit `concourse-policy.hcl`.  This defines the Concourse access rights to Vault and implicitly where secrets are going to be stored.  The default is as described in [Configuring the Secrets Engine](https://concourse-ci.org/vault-credential-manager.html#configuring-the-secrets-engine).
 
 ## Running
 
