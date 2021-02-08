@@ -1,5 +1,7 @@
 #!/bin/bash
 
-#	up -- run concourse in the background
+#	up -- run concourse in the background after generating environment file
 
-docker-compose --env-file private/credentials up -d
+echo "# DO NOT EDIT: Automatically Generated" > private/environment
+cat private/env/* >> private/environment
+docker-compose --env-file private/environment up -d

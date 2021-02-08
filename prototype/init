@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#	init -- deploy prototype files prior to local editing
+
+#	N.B. must be run from root directory of repo: e.g. "$ prototype/init"
+
+mkdir -p private/tls private/env
+chmod 700 private private/tls private/env
+cp prototype/up prototype/down bin
+cp -n prototype/credentials prototype/settings private/env

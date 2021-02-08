@@ -2,4 +2,4 @@
 
 #	down -- shutdown concourse
 
-docker-compose --env-file private/credentials down
+docker-compose --env-file private/environment down
