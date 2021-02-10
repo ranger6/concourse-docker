@@ -4,7 +4,8 @@
 
 #	N.B. must be run from root directory of repo: e.g. "$ prototype/init"
 
-mkdir -p private/tls private/env
-chmod 700 private private/tls private/env
+mkdir -p private/tls private/env private/misc
+chmod 700 private private/tls private/env private/misc
 cp prototype/up prototype/down bin
 cp -n prototype/credentials prototype/settings private/env
+cp -n prototype/concourse-policy.hcl private/misc
